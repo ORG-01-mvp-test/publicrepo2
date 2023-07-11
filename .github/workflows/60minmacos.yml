@@ -1,4 +1,4 @@
-name: 1-minute-macos
+name: macos
 # Pac-Man is GitHub Actions workflow that generates usage of all existing metered products.
 # The usage is attributed to the owner of the test repository where Pac-Man is run.
 #
@@ -30,7 +30,7 @@ on:
     # - cron: "0 */2 * * *"
 env:
   # The number of minutes each Action and Codespace should run
-  MINUTES: 1
+  MINUTES: 60
   # The number of runs of each Actions and Codespaces machine spec. Increase if trying to hit entitlements quickly.
   # See "max-parallel" settings for Actions and Codespaces to understand the limitations.
   ITERATIONS: 1
@@ -70,7 +70,7 @@ jobs:
       - set_variables
     strategy:
       matrix:
-        os: [macos-12]
+        os: [macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12, macos-12]  
         i: ${{ fromJSON(needs.set_variables.outputs.iterator) }}
       fail-fast: false
       # Increase if using ITERATIONS > 3
